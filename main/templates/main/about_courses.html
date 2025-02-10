@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Courses - ACME Group of Institutions</title>
+
+    <!-- Linking to external CSS and JS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #1E3A8A;
+        }
+
+        a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgb(36, 84, 163);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-list li {
+            margin: 0 15px;
+        }
+
+        .navbar-list a {
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        .navbar-list a:hover {
+            background-color: #3B82F6;
+            border-radius: 5px;
+        }
+
+        /* Header Section */
+        title {
+            color: black;
+        }
+
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #1E3A8A;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-container h1 {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-container p {
+            font-size: 1.6rem;
+            font-weight: 400;
+            font-style: italic;
+            margin-top: 10px;
+            line-height: 1.6;
+            letter-spacing: 1px;
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .slide-image {
+            width: 100%;  
+            height: 500px;
+            object-fit: cover; 
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        /* Courses Section */
+        .courses-section {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .course-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-item h3 {
+            color: #1E3A8A;
+        }
+
+        .course-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .course-item ul li::before {
+            content: "✔";
+            color: #3B82F6;
+            margin-right: 8px;
+        }
+
+        /* Call-to-Action Section */
+        .cta-section {
+            padding: 40px 20px;
+            background-color: #1E3A8A;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3B82F6;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .cta-button:hover {
+            background-color: #1E3A8A;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1E3A8A;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="{%url 'home'%}">Home</a></li>
+            <li><a href="{% url 'courses'%}">About Courses</a></li>
+            <li><a href="{% url 'founder' %}">About Founder</a></li>
+            <li><a href="#sign-in">Inquiry</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <div class="hero-container">
+            <h1 class="title" style="color: #FF5733;">Our Courses</h1>
+            <p>Enhance your skills with our specialized courses in Industrial Accounting, Taxation, and Job Placement Assistance.</p>
+        </div>
+    </header>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="{% static 'images/slide_image.jpg' %}" class="slide-image" alt="Course Image 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/slide_image2.jpeg' %}" class="slide-image" alt="Course Image 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="{% static 'images/slide_image4.jpg' %}" class="slide-image" alt="Course Image 3">
+        </div>
+    </div>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <h2>Industrial Accounting with Tally Software</h2>
+        <div class="courses-container">
+            <div class="course-item">
+                <h3>Course Highlights</h3>
+                <ul>
+                    <li>Hands-on training with Tally software.</li>
+                    <li>Comprehensive GST, Income Tax, and other taxation topics.</li>
+                    <li>Financial reporting and budgeting techniques.</li>
+                    <li>Practical skills for job readiness.</li>
+                </ul>
+            </div>
+
+            <div class="course-item">
+                <h3>Job Placement Assistance</h3>
+                <ul>
+                    <li>Interview preparation and coaching.</li>
+                    <li>Professional resume building assistance.</li>
+                    <li>One-on-one career counseling sessions.</li>
+                </ul>
+            </div>
+
+            <div class="course-item">
+                <h3>Accounting & Taxation Consultancy</h3>
+                <ul>
+                    <li>GST and tax compliance.</li>
+                    <li>Financial audits and detailed reporting.</li>
+                    <li>Strategic tax planning and filing services.</li>
+                    <li>Business consulting and financial strategy development.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section id="cta" class="cta-section">
+        <h2>Start Your Learning Journey Today!</h2>
+        <p>Enroll in our specialized courses to advance your career in accounting, taxation, and job placement.</p>
+        <a href="{% url 'inquiry' %}" class="cta-button">Enroll Now</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 ACME Group of Institutions. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Slideshow JavaScript
+        let slideIndex = 0;
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+        }
+
+        showSlides(); // Initialize the slideshow
+    </script>
+</body>
+
+</html>

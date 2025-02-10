@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACME Group of Institutions</title>
+    
+    <!-- Linking to external CSS and JS -->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #1E3A8A;
+        }
+
+        a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color:rgb(36, 84, 163);
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-list li {
+            margin: 0 15px;
+        }
+
+        .navbar-list a {
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        .navbar-list a:hover {
+            background-color: #3B82F6;
+            border-radius: 5px;
+        }
+
+        /* Header Section */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #1E3A8A; 
+            color: white;
+            font-family: 'Poppins', sans-serif; 
+        }
+
+        /* Main Heading */
+        hero-container {
+            max-width: 800px; 
+            margin: 0 auto; 
+            text-align: center;
+            color: white; 
+        }
+        
+        .hero-container h1 {
+            font-size: 3.8rem; 
+            margin-bottom: 20px;
+            font-weight: 700; 
+            line-height: 1.2; 
+            text-transform: uppercase;
+            letter-spacing: 2px; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: white; 
+        }
+        
+        /* Hero Image Styles */
+        .hero-image {
+            width: 150px; /* Set the width to a smaller value */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Optional: adjust spacing */
+        }
+
+
+        .hero-container p {
+            font-size: 1.6rem; 
+            font-weight: 400; 
+            font-style: italic; 
+            margin-top: 10px;
+            line-height: 1.6;
+            letter-spacing: 1px;
+            color: white; 
+        }
+
+        /* Centered Content */
+        .hero-container {
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* About Section */
+        
+        #cta p {
+        font-size: 1.8rem; 
+        line-height: 1.6;  
+        }
+
+        
+        .about-section {
+            padding: 60px 20px;
+            background-color: #1E3A8A;
+            text-align: center;
+        }
+
+        .white-text{
+            color: white;
+            font: 24
+        }
+        
+
+        .about-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .about-item {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .about-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-item ul li::before {
+            content: "✔";
+            color: #3B82F6;
+            margin-right: 8px;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 60px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .achievements-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .achievement-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Call-to-Action Section */
+        .cta-section {
+            padding: 40px 20px;
+            background-color: #1E3A8A;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #3B82F6;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .cta-button:hover {
+            background-color: #1E3A8A;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .contact-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1E3A8A;
+            color: white;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="{% url 'courses'%}">About Courses</a></li>
+            <li><a href="{% url 'founder' %}">About Founder</a></li>
+            <li><a href="{% url 'inquiry'%}">Inquiry</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Header Section -->
+    <header>
+        <div class="hero-container">
+            <h1>Welcome to ACME Group of Institutions</h1>
+            <p>Your Pathway to Success in Accounting, Taxation, and Job Placement Services</p>
+        </div>
+        <!-- Hero Image Placeholder -->
+        <img src="{% static 'images/acme_logo.jpg' %}" alt="ACME Group" class="hero-image">
+    </header>
+
+    <!-- Key Services Section -->
+    <section id="key-services" class="services-section">
+        <h2>Our Key Services</h2>
+        <div class="services-container">
+            <div class="service-item">
+                <img src="{% static 'images/Industrial accounting.jpg' %}" alt="Industrial Accounting">
+                <h3>Industrial Accounting Education</h3>
+                <p>We provide specialized training in industrial accounting, including the use of Tally software and taxation principles.</p>
+            </div>
+            <div class="service-item">
+                <img src="{% static 'images/job placement.jpg' %}" alt="Job Placement Assistance">
+                <h3>Job Placement Assistance</h3>
+                <p>Our dedicated placement team works closely with industries to ensure that our students secure fulfilling careers.</p>
+            </div>
+            <div class="service-item">
+                <img src="{% static 'images/account tax.jpg' %}" alt="Accounting & Taxation Consultancy">
+                <h3>Accounting & Taxation Consultancy</h3>
+                <p>We offer expert consultancy services to businesses, providing solutions for taxation, audits, and financial planning.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us" class="about-section">
+        <h2 class="white-text">About ACME Group of Institutions</h2>
+    <p class="white-text">Founded in 1989, ACME Group of Institutions has been empowering students in the fields of Industrial Accounting, Taxation, and Job Placement Assistance. Our legacy of excellence spans over three decades, making us a leading name in Haridwar and beyond.</p>
+        <div class="about-container">
+            <div class="about-item">
+                <h3>Mission & Vision</h3>
+                <p>Our mission is to provide world-class education and services in industrial accounting, taxation, and job placement. We aim to equip our students with the skills needed to excel in their careers and contribute meaningfully to the business world.</p>
+            </div>
+            <div class="about-item">
+                <h3>Why Choose ACME?</h3>
+                <ul>
+                    <li>35+ years of expertise</li>
+                    <li>Experienced faculty with industry knowledge</li>
+                    <li>Strong connections with top companies for job placements</li>
+                    <li>Comprehensive Tally and Industrial Accounting courses</li>
+                    <li>Trusted tax consultancy services</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Achievements Section -->
+    <section id="key-achievements" class="achievements-section">
+        <h2>Key Achievements</h2>
+        <div class="achievements-container">
+            <div class="achievement-item">
+                <h3>Pioneer of Tally Software in Haridwar</h3>
+                <p>In 1989, Harkesh introduced Tally Software to Haridwar, recognizing its transformative potential for accounting. This forward-thinking move modernized financial management for students and businesses alike.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Educating Thousands of Professionals</h3>
+                <p>ACME Computers has trained thousands of students in accounting and taxation. Many of these graduates have gone on to occupy key roles in leading organizations across India.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Trusted Financial Advisor</h3>
+                <p>Known for his unmatched expertise in taxation, Harkesh Mohan has provided guidance to businesses of all sizes, offering insights into tax laws, GST compliance, and financial strategy.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Comprehensive Industrial Accounting Curriculum</h3>
+                <p>Harkesh designed ACME's curriculum to blend practical training with in-depth theoretical knowledge, covering tools like Tally, GST filing, and financial reporting.</p>
+            </div>
+            <div class="achievement-item">
+                <h3>Vision for ACME Computers</h3>
+                <p>With a focus on innovation and accessibility, Harkesh Mohan is expanding ACME Computers into the digital realm. The upcoming website will feature:</p>
+                <ul>
+                    <li>Online Courses in Industrial Accounting and Taxation.</li>
+                    <li>Certification Programs for career advancement.</li>
+                    <li>Resources for students, alumni, and businesses.</li>
+                    <li>Regular updates on industry trends and tax laws.</li>
+                </ul>
+                <p>This initiative will extend ACME’s reach, providing quality education to learners globally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Section -->
+    <section id="cta" class="cta-section">
+        <h2>Start Your Journey Today!</h2>
+        <p>Enroll in our next batch of courses to get ahead in accounting, taxation, and job placement. Take the first step towards your career success.</p>
+        <a href="{%url 'inquiry'%}" class="cta-button">Want to make a Inquiry</a>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us" class="contact-section">
+        <h2>Get in Touch</h2>
+        <p>Ready to enroll or have questions? Contact us, and we’ll help you get started.</p>
+        <div class="contact-details">
+            <ul>
+                <li><strong>Phone:</strong> 01334-229405, 9152364303</li>
+                <li><strong>Email:</strong> <a href="mailto:acmeharidwar@gmail.com">acmeharidwar@gmail.com</a></li>
+                <li><strong>Address:</strong> 612, Avas Vikas, Ranipur More, Haridwar, Uttarakhand (India), PIN: 249407</li>
+            </ul>
+            <h3>Follow Us</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/acmeharidwar" target="_blank">Facebook</a>
+                <a href="https://www.linkedin.com/company/acmeharidwar" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 ACME Group of Institutions. All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>

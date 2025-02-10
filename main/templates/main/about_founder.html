@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Founder - Harkesh Mohan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.7;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #1E3A8A;
+            font-weight: bold;
+        }
+
+        a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #002147;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-list li {
+            margin: 0 15px;
+        }
+
+        .navbar-list a {
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        .navbar-list a:hover {
+            background-color: #3B82F6;
+            border-radius: 5px;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #002147;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            color: orange;
+        }
+
+        /* Profile Section */
+        .profile-container {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .profile-container h2 {
+            color: #1E3A8A;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .profile-container p {
+            font-size: 1.25rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        /* Image Section */
+        .profile-img-container {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .profile-img-container img {
+            width: 200px;  /* Adjust the size of the image */
+            height: 200px; /* Make it square */
+            object-fit: cover;
+            border: 5px solid #1E3A8A;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .achievements {
+            margin-top: 30px;
+        }
+
+        .achievements h3 {
+            font-size: 2.2rem;
+            color: #1E3A8A;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1rem;
+        }
+
+        .achievements ul li::before {
+            content: "✔";
+            color: #3B82F6;
+            margin-right: 8px;
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #002147;
+            color: white;
+        }
+
+        /* Call-to-Action Section */
+        .cta-section {
+            padding: 40px 20px;
+            background-color: #1E3A8A;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            background-color: #3B82F6;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #1E3A8A;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul class="navbar-list">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'courses' %}">About Courses</a></li>
+            <li><a href="{% url 'founder' %}">About Founder</a></li>
+            <li><a href="{%url 'inquiry'%}">Inquiry</a></li>
+            <li><a href="#faq">FAQs</a></li>
+            <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="header">
+        <h1>Founder: Harkesh Mohan</h1>
+    </div>
+
+    <div class="profile-container">
+        <!-- Profile Image -->
+        <div class="profile-img-container">
+            <img src={%static "images/taxguru.jpg" %} alt="Harkesh Mohan">
+        </div>
+
+        <h2>Harkesh Mohan - Visionary Educator & Founder</h2>
+
+        <p><strong>Founder & Principal, ACME Computers, Haridwar</strong></p>
+        <p><strong>Established:</strong> 1989</p>
+        <p><strong>Location:</strong> Haridwar, Uttarakhand, India</p>
+        <p><strong>Expertise:</strong> Industrial Accounting, Taxation, Tally Software Training</p>
+        <p><strong>Known as:</strong> "The Tax Guru"</p>
+
+        <h3>About Harkesh Mohan</h3>
+        <p>Harkesh Mohan, a name synonymous with quality education in the fields of Industrial Accounting and Taxation, founded <strong>ACME Computers</strong> in 1989 in Haridwar. With a deep passion for teaching and empowering individuals, Harkesh has touched the lives of thousands of students across India, many of whom have gone on to achieve great heights in their careers. His expertise in Tally software, accounting principles, and taxation laws has made him one of the most respected educators in the region.</p>
+
+        <p>Known for his meticulous approach to teaching, Harkesh is affectionately referred to as "<strong>The Tax Guru</strong>" in Haridwar and its surrounding areas. His innovative methods have revolutionized the way accounting and taxation are taught, ensuring his students not only gain theoretical knowledge but also practical insights into the real-world application of these concepts.</p>
+
+        <h3>Key Achievements</h3>
+        <div class="achievements">
+            <ul>
+                <li><strong>Pioneer in Tally Software:</strong> Harkesh was the first to introduce <strong>Tally</strong> software to Haridwar in 1989, which transformed local businesses and accounting practices.</li>
+                <li><strong>Thousands of Successful Graduates:</strong> His institute has produced a vast network of successful professionals, many of whom hold leadership positions in top companies across India.</li>
+                <li><strong>Comprehensive Training Programs:</strong> Harkesh’s unique curriculum covers all aspects of Industrial Accounting, Taxation, and Tally Software, preparing students for challenges in the real world.</li>
+                <li><strong>A Trusted Advisor:</strong> Beyond his role as an educator, Harkesh is sought after for his in-depth understanding of taxation laws and financial management by businesses and professionals alike.</li>
+            </ul>
+        </div>
+
+        <h3>Vision for ACME Computers</h3>
+        <p>Harkesh Mohan’s vision is to continue empowering students worldwide with the skills and knowledge they need to excel in the fields of accounting and taxation. Through the development of an official website for ACME Computers, Harkesh aims to make high-quality educational resources accessible to individuals globally. The platform will offer:</p>
+        <ul>
+            <li>Online courses and training modules</li>
+            <li>Certification programs in Industrial Accounting and Taxation</li>
+            <li>Alumni network and student resources</li>
+            <li>Regular updates on industry trends and tax laws</li>
+        </ul>
+        <p>By embracing technology, Harkesh ensures that his students have the flexibility to learn from anywhere in the world, empowering them to build successful careers at their own pace.</p>
+
+        <h3>Legacy and Impact</h3>
+        <p>With over three decades of experience, Harkesh Mohan has become a mentor and a role model for countless students. His contributions to the accounting and taxation education landscape have had a lasting impact on the region’s professional community. As the founder of ACME Computers, Harkesh’s legacy will continue to shape the careers of many more students in the years to come.</p>
+    </div>
+
+    <div class="cta-section">
+        <h2>Join Us on Our Educational Journey</h2>
+        <p>Stay connected with us as we expand our reach and continue providing top-tier education in Industrial Accounting, Taxation, and Tally Software. Together, we can shape the future of accounting professionals worldwide.</p>
+        <a href={%url "courses"%} class="cta-button">Explore Our Courses</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 ACME Computers. All Rights Reserved.</p>
+    </div>
+
+</body>
+</html>
